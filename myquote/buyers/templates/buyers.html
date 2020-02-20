@@ -1,24 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Buyers</title>
-</head>
-<body>
 
-    <h1>List of all buyers:</h1>
+{% extends 'base.html' %}
 
-    {%for buyer in object_list%}
-        <ul>
-            <li>Name: {{buyer.name}}</li>
-            <li>Email: {{buyer.email}}</li>
-            <li>Phone number: {{buyer.phone_number}}</li>
-            <li>ID: {{buyer.id_code}}</li>
-            <li>Entrance: {{buyer.dt_entrance}}</li>
-        </ul>
-        <hr>
-    {%endfor%}
+    {% block title %}MyQuote: Buyers{% endblock %}
 
-</body>
-</html>
+    {% block content %}
 
+        <div class="container">
+            <div class="row">
+                <div class="col-6 mt-4 display-4 mb-5">
+                    Buyers List:
+                </div>
+                <div class="col-6 mt-4 text-right">
+
+                    <a class="btn btn-outline-success mt-3" href="{% url 'buyers-create' %}">
+                        <p class="lead">Create New Buyer</p>
+                    </a>
+
+                </div>
+            </div>
+
+            <table class="table table-hover shadow-lg">
+              <thead class="thead-dark">
+                <tr class="lead">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone nr.</th>
+                    <th>ID</th>
+                    <th>Entrance</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {%for buyer in object_list%}
+                    <tr class="lead">
+                          <td>{{buyer.pk}}</td>
+                          <td>{{buyer.name}}</td>
+                          <td>{{buyer.email}}</td>
+                          <td>{{buyer.phone_number}}</td>
+                          <td>{{buyer.id_code}}</td>
+                          <td>{{buyer.dt_entrance}}</td>
+                          <td>
+                              <a class="btn btn-outline-primary" href="{% url 'buyers-update' buyer.pk %}">
+                                  <span class="lead">Update</span>
+                              </a>
+                          </td>
+                          <td>
+                              <a class="btn btn-outline-danger" href="{% url 'buyers-delete' buyer.pk %}">
+                                  <span class="lead">Delete</span>
+                              </a>
+                          </td>
+                    </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+        </div>
+
+    {% endblock %}
