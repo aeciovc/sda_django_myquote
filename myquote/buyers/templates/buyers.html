@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyers</title>
+</head>
+<body>
+
+    <h1>List of all buyers:</h1>
+
+    {%for buyer in object_list%}
+        <ul>
+            <li>Name: {{buyer.name}}</li>
+            <li>Email: {{buyer.email}}</li>
+            <li>Phone number: {{buyer.phone_number}}</li>
+            <li>ID: {{buyer.id_code}}</li>
+            <li>Entrance: {{buyer.dt_entrance}}</li>
+        </ul>
+        <hr>
+    {%endfor%}
+
+</body>
+</html>
+

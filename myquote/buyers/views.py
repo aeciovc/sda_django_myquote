@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Buyer
 
-# Create your views here.
+
+class BuyersListView(ListView):
+
+    model = Buyer
+    template_name = 'buyers.html'
+
