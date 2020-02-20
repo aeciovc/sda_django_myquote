@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create a new Buyer</title>
+    <title>Update Form</title>
 </head>
 <body>
-
-    <h1>Register a new buyer:</h1>
+    <h1>Update a record for {{object.name}}:</h1>
     <form method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Register">
+    {{ form.as_p }}
+    <input type="submit" value="Update">
     </form>
 
 </body>
