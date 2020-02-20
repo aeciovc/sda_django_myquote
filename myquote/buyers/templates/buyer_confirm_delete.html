@@ -6,7 +6,7 @@
         <div class="container text-center">
 
             <form method="post" class="form-group mt-5">{% csrf_token %}
-                <p class="lead">Are you sure you want to delete "{{ object }}"?</p>
+                <p class="lead">Are you sure you want to delete <b>"{{ object }}"</b>?</p>
                 <input type="submit" class="form-control btn btn-outline-danger w-25" value="Delete">
             </form>
 

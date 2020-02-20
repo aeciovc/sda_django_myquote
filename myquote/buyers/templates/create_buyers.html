@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create a new Buyer</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>Register a new buyer:</h1>
-    <form method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Register">
-    </form>
+    {% block title %}MyQuote: Create new Buyer{% endblock %}
 
-</body>
-</html>
+    {% block content %}
+        <div class="container text-center">
+
+
+            <div class="display-4 mt-4 mb-4">Register a new buyer:</div>
+
+            <form method="post">{% csrf_token %}
+                <div class="form-group lead">
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-success" value="Register">
+                </div>
+            </form>
+
+
+
+        </div>
+
+    {%endblock%}
+
