@@ -6,6 +6,9 @@
     {% block content %}
 
         <div class="container">
+
+            {% if object_list %}
+
             <div class="row">
                 <div class="col-6 mt-4 display-4 mb-5">
                     Buyers List:
@@ -55,7 +58,25 @@
 
               </tbody>
             </table>
+            {% else %}
+                <div class="text-center shadow">
 
+                    <div class="pt-4 mt-5 display-4 pb-5 bg-info">
+
+                        <p>There are no buyers so far...</p>
+
+                        <img src="../static/no_buyers.svg" alt="Sad face">
+
+                    </div>
+                    <div class="pt-4 pb-5 border">
+                        <p class="lead font-weight-bold text-dark">Would you like to add a new buyer?</p>
+                        <a class="btn btn-outline-success mt-3" href="{% url 'buyers-create' %}">
+                            <p class="lead">Create New Buyer</p>
+                        </a>
+                    </div>
+
+                </div>
+            {% endif %}
         </div>
 
     {% endblock %}
