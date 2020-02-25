@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+    {% block title %}MyQuote: Delete {{ object }}{% endblock %}
+
+    {% block content %}
+        <div class="container text-center">
+
+            <form method="post" class="form-group mt-5">{% csrf_token %}
+                <p class="lead">Are you sure you want to delete <b>"{{ object }}"</b>?</p>
+                <input type="submit" class="form-control btn btn-outline-danger w-25" value="Delete">
+            </form>
+
+            <iframe src="https://giphy.com/embed/ToMjGpx9F5ktZw8qPUQ" width="480" height="392"
+                    class="giphy-embed" allowFullScreen></iframe>
+        </div>
+
+    {%endblock%}
