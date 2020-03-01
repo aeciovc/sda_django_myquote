@@ -11,7 +11,8 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
+myquote/media/*
+!myquote/media/default_image.jpg
 
 # Backup files #
 *.bak
