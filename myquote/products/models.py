@@ -19,7 +19,7 @@ class Product(models.Model):
         choices=STATUSES,
         default='NP'
     )
-    image = models.ImageField(default='default_image.jpg', storage='product_image')
+    image = models.ImageField(default='default_image.jpg', upload_to='images/')
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
 
 
