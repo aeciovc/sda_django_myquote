@@ -9,6 +9,9 @@ STATUSES = [
 class Category(models.Model):
     name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
@@ -19,8 +22,11 @@ class Product(models.Model):
         choices=STATUSES,
         default='NP'
     )
-    image = models.ImageField(default='default_image.jpg', upload_to='images/')
+    image = models.ImageField(default='default_image.jpg', upload_to='product_images/')
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.name
 
 
 
