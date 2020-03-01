@@ -1,6 +1,10 @@
 /env
 
 
+
+# configuration files:
+.cnf
+
 # Django #
 *.log
 *.pot
