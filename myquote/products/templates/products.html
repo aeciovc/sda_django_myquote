@@ -1,0 +1,29 @@
+<h1>Product list</h1>
+{% block content %}
+    <table>
+        <tr>
+            <th>image</th>
+            <th>PK</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Brand</th>
+            <th>Status</th>
+            <th>Category</th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td>
+                    <a href="{{ product.image.url }}">
+                        <img src="{{ product.image.url }}" height="100" width="100">
+                    </a>
+                </td>
+                <td>{{ product.pk }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.status }}</td>
+                <td>{{ product.category.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
