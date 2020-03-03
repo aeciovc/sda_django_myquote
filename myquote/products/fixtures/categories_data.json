@@ -1,0 +1,26 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+
+      "name": "Electronics"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+
+      "name": "Furniture"
+    }
+  },
+    {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+
+      "name": "Health-care"
+    }
+  }
+]
