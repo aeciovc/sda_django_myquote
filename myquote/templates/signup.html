@@ -35,16 +35,21 @@
                                     {{field.errors}}
                                 </div>
                                 {%endif%}
-
                             <div class="d-flex pl-5 ml-5 mr-5 pr-5">
+
+                            {%if field.name == 'password1' or field.name == 'password2' %}
+                                <input type="password" class="form-control" name="{{ field.name }}"
+                                       id="id_{{ field.name }}" placeholder="Type {{field.name}} here...">
+                            {%else%}
                             <input type="text" class="form-control" name="{{ field.name }}" id="id_{{ field.name }}"
                                    placeholder="Type {{field.name}} here...">
+                            {%endif%}
                             </div>
 
                         </fieldset>
                     {% endfor %}
 
-                    <input type="submit" class="form-control btn btn-outline-success w-25 mb-3" value="Sign Up">
+                    <input type="submit" class="form-control btn btn-outline-success w-25 mb-3" value="Register">
 
                 </div>
 
