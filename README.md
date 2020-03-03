@@ -2,6 +2,6 @@
 
 # Run mysql server using Docker
 
-´´´
+```
 docker-compose up
-´´´
+```
