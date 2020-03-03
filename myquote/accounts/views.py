@@ -1,10 +1,14 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
 
 def user_login(request):
+    if request.user.is_authenticated:
+        return HttpResponse("You are already logged in :)")
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -25,7 +29,6 @@ def user_login(request):
 
 
 def user_logout(request):
-
     logout(request)
 
     return redirect('index')
