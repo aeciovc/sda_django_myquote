@@ -16,10 +16,10 @@ class ContactForm(forms.Form):
     def clean(self):
         super(ContactForm, self).clean()
 
-        name = self.cleaned_data('name')
-        email = self.cleaned_data('email')
-        city = self.cleaned_data('city')
-        message = self.cleaned_data('message')
+        name = self.cleaned_data.get('name')
+        email = self.cleaned_data.get('email')
+        city = self.cleaned_data.get('city')
+        message = self.cleaned_data.get('message')
 
         if len(name) > 45:
             self._errors['name'] = self.error_class([

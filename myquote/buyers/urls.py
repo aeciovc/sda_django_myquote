@@ -10,4 +10,3 @@ urlpatterns = [
     path('delete/<int:pk>/', BuyersDeleteView.as_view(), name="buyers-delete"),
     path('contact/', contact_form, name='contact')
 ]
-
