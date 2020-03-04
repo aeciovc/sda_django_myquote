@@ -9,7 +9,7 @@
       <h1>Login required:</h1>
         <form method="post" action="{% url 'user-login' %}">
                   {% csrf_token %}
-                  {# A more "HTML" way of creating the login form#}
+
                   <label for="username">Username:</label>
                   <input type="text" name="username" placeholder="Username">
 
@@ -21,6 +21,7 @@
                   {%endif%}
 
                   <input type="submit" name="" value="Login">
+            <p class="mt-4">Don't have an account? <a href="{% url 'user-signup' %}"> REGISTER NOW</a></p>
         </form>
     </div>
   </div>
