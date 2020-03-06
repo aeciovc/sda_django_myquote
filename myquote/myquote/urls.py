@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('buyers/', include('buyers.urls')),
     path('', TemplateView.as_view(template_name="index.html")),
+    path('', include('products.urls'))
 ]
 
 if settings.DEBUG:
