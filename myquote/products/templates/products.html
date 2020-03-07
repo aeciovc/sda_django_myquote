@@ -1,29 +1,39 @@
-<h1>Product list</h1>
+{% extends 'base.html' %}
+
 {% block content %}
-    <table>
-        <tr>
-            <th>image</th>
-            <th>PK</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Brand</th>
-            <th>Status</th>
-            <th>Category</th>
-        </tr>
-        {% for product in products %}
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">Products list</h5>
+          </div>
+          <div class="card-body ">
+            <table>
             <tr>
-                <td>
-                    <a href="{{ product.image.url }}">
-                        <img src="{{ product.image.url }}" height="100" width="100">
-                    </a>
-                </td>
-                <td>{{ product.pk }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.description }}</td>
-                <td>{{ product.brand }}</td>
-                <td>{{ product.get_status_display }}</td>
-                <td>{{ product.category.name }}</td>
+                <th>Image</th>
+                <th>PK</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Brand</th>
+                <th>Status</th>
+                <th>Category</th>
             </tr>
-        {% endfor %}
-    </table>
+            {% for product in products %}
+                <tr>
+                    <td>
+                        <a href="{{ product.image.url }}">
+                            <img src="{{ product.image.url }}" height="100" width="100">
+                        </a>
+                    </td>
+                    <td>{{ product.pk }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.brand }}</td>
+                    <td>{{ product.get_status_display }}</td>
+                    <td>{{ product.category.name }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
 {% endblock %}
