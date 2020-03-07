@@ -1,0 +1,27 @@
+{% extends 'bases.html' %}
+
+{% block title %}  User profile {% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+    <li>
+        <i class="nc-icon nc-single-02"></i>
+        <p>Hello, {{user.username}}</p>
+    </li>
+    <li>
+        <a href="{%url 'user-logout'%}">
+        <i class="nc-icon nc-single-02"></i>
+        <p>Logout</p>
+        </a>
+    </li>
+    {% else %}
+    <li>
+        <a href="{%url 'user-login'%}">
+        <i class="nc-icon nc-single-02"></i>
+        <p>Login</p>
+        </a>
+    </li>
+    {% endif %}
+
+{% endblock content%}

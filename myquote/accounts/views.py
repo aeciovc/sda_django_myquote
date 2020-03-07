@@ -4,6 +4,8 @@ from .forms import SignUpForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views.generic import UpdateView
+from django.contrib.auth.models import User
 
 
 def user_login(request):
@@ -51,3 +53,11 @@ def user_signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+
+class UserProfile(UpdateView):
+    model = User
+    template_name = 'user.html'
+    context_object_name = 'user'
+    fields = '__all__'
+
