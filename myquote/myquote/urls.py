@@ -22,8 +22,9 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('buyers/', include('buyers.urls')),
-    path('', TemplateView.as_view(template_name="index.html")),
-    path('', include('products.urls'))
+    path('products/', include('products.urls')),
+    path('', TemplateView.as_view(template_name="index.html"), name='index'),
+    path('accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:
