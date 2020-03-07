@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from .views import contact_form
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
     path('admin/', admin.site.urls),
     path('buyers/', include('buyers.urls')),
-    path('about/', TemplateView.as_view(template_name="about.html")),
-    path('contact/', TemplateView.as_view(template_name="contact.html")),
+    path('contact/', contact_form, name="contact"),
 
 ]

@@ -78,9 +78,9 @@
             <h5 class="card-title">Contact us</h5>
           </div>
           <div class="card-body ">
-            <form action="/contact" method="post">
+            <form action="{% url 'contact' %}" method="post">
               {% csrf_token %}
-                {{ form }}
+                {{ form.as_p }}
               <input type="submit" value="Submit">
             </form>
           </div>
@@ -103,10 +103,7 @@
         <nav class="footer-nav">
           <ul>
             <li>
-              <a href="/about" target="_blank">About us</a>
-            </li>
-            <li>
-              <a href="/contact" target="_blank">Contact us</a>
+              <a href="{% url 'contact' %}" target="_blank">Contact us</a>
             </li>
           </ul>
         </nav>
