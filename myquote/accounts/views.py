@@ -59,5 +59,5 @@ class UserProfile(UpdateView):
     model = User
     template_name = 'user.html'
     context_object_name = 'user'
-    fields = '__all__'
-
+    fields = ['first_name', 'last_name', 'email']
+    success_url = 'http://127.0.0.1:8000'
