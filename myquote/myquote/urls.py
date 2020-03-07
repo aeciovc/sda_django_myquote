@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('buyers/', include('buyers.urls')),
     path('contact/', contact_form, name="contact"),
-
+    path('thank_you/', contact_form, name='thank_you')
 ]
