@@ -38,6 +38,7 @@ class ProductCreateView(CreateView):
     template_name = 'product_add.html'
     fields = '__all__'
     success_url = reverse_lazy('products_list')
+
 class CategoryListView(ListView):
     model = Category
     template_name = 'category_list.html'
@@ -46,9 +47,12 @@ class CategoryListView(ListView):
 class CategoryCreateView(CreateView):
     model = Category
     template_name = 'category_create.html'
-    fields = '__all__'
+    fields = ['name', 'created_date']
     success_url = reverse_lazy('category_list')
 
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
 
 class CategoryUpdateView(UpdateView):
     model = Category
