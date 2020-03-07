@@ -15,8 +15,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
-    description = models.TextField()
-    brand = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True)
+    brand = models.CharField(max_length=200, default='N/A')
     status = models.CharField(
         max_length=2,
         choices=STATUSES,
