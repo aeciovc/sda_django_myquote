@@ -53,7 +53,7 @@ class CategoryCreateView(CreateView):
 class CategoryUpdateView(UpdateView):
     model = Category
     template_name = 'category_update.html'
-    fields = ['name']
+    fields = ['name', 'created date', 'created by']
     context_object_name = 'category'
     fields = '__all__'
     success_url = reverse_lazy('category_list')
