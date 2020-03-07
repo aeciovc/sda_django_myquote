@@ -6,7 +6,6 @@ from myquote.products import Product
 
 # from myquote.seller import Seller
 
-# Create your models here.
 
 class Orders(models.Model):
     buyer = models.ForeignKey(Buyer, on_delete=None)
