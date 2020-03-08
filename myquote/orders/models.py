@@ -1,15 +1,17 @@
 from django.db import models
 
-from myquote.buyers import Buyer
-from myquote.products import Product
-from myquote.seller import Seller
+
+from buyers.models import Buyer
+from products.models import Product
+from seller.models import Seller
 
 
-class Orders(models.Model):
+class Order(models.Model):
     buyer = models.ForeignKey(Buyer, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
-    date_for_product = models.DateTimeField(blank=True)
+    date_for_product = models.DateTimeField(blank=None, default=None)
+    quantity = models.TextField(blank=False, default=None)
     comment = models.TextField(blank=None)
 
     def __str__(self):
