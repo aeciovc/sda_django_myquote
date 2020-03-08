@@ -1,7 +1,7 @@
 [client]
 database = myquote_db
 user = root
-password = root1
-host = localhost
+password = root0
+host = 127.0.0.1
 port = 3306
 default-character-set = utf8
