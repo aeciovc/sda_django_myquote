@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <th>Notifications</th>
+
+        </tr>
+        {% for notification in notifications  %}
+            <tr>
+                <td>{{ notification.pk }}</td>
+                <td>{{ notification.type }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -4,6 +4,7 @@ from .models import Category
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from .models import Product
+from notifications.models import Notification
 
 
 class ProductListView(ListView):
@@ -43,6 +44,11 @@ class CategoryListView(ListView):
     model = Category
     template_name = 'category_list.html'
     context_object_name = 'categories'
+
+    def setup(self, request, *args, **kwargs):
+        Notification.load_notifications(request)
+        return super().setup(request, *args, **kwargs)
+
 
 class CategoryCreateView(CreateView):
     model = Category
