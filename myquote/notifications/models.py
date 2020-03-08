@@ -1,3 +1,13 @@
 from django.db import models
 
-# Create your models here.
+STATUSES = [
+    ('B', 'Buyer'),
+    ('S', 'Seller'),
+]
+
+class notifications(models.Model):
+    type = models.CharField(
+        max_length=2,
+        choices=STATUSES,
+        default='B'
+    )
