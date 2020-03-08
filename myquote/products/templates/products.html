@@ -10,7 +10,6 @@
             <table class="table">
             <tr>
                 <th>Image</th>
-                <th>PK</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Brand</th>
@@ -24,7 +23,6 @@
                             <img src="{{ product.image.url }}" height="100" width="100">
                         </a>
                     </td>
-                    <td>{{ product.pk }}</td>
                     <td>
                         <a href="{% url 'product_detail' product.pk %}">
                             {{ product.name }}
