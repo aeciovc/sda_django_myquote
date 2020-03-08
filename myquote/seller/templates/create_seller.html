@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Create seller
+{% endblock %}
+
+{% block content %}
+    <div class="container text-center lead">
+        <div class="display-4 mt-4 mb-4">CREATE NEW SELLER</div>
+        {% if message %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endif %}
+        {% if ERROR %}
+            <div class="alert alert-danger" role="alert">{{ ERROR }}‹</div>
+        {% endif %}
+        <form method="POST" class="rounded pt-3 shadow-lg">
+            {% csrf_token %}
+            <fieldset class="form-group d-flex pl-5 ml-5 mr-5 pr-5">
+                <div class="form-group lead">
+                    <label for="id_name">Name</label>
+                    <br>
+                    <input name="name" id="id_name" type="text">
+                    <br>
+
+                    <label for="id_email">Email</label>
+                    <br>
+                    <input type="email"  name="email" id="id_email">
+                    <br>
+
+                    <label for="id_phone_number">Phonenumber</label>
+                    <br>
+                    <input name="phonenumber" type="text" id="id_phone_number">
+                    <br>
+
+                    <label for="id_dt_entrance">Data about seller</label>
+                    <br>
+                    <input name="dt_entrance" type="text" id="id_dt_entrance">
+                </div>
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}

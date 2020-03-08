@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container text-center lead">
+        {% if message %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+        {% if ERROR %}
+        <div class="alert alert-danger" role="alert">
+            {{ ERROR }}
+        </div>
+        {% endif %}
+
+        <div class="rounded pt-3 shadow-lg">
+            <form method="POST" action="{% url 'update_seller' seller.id_code %}">
+                {% csrf_token %}
+
+                    <fieldset class="form-group d-flex pl-5 ml-5 mr-5 pr-5">
+                        <div class="form-group lead">
+                            <label for="id_name">name</label><br>
+                            <input name="name" id="id_name" type="text" value="{{ seller.name }}">
+                            <br>
+
+                            <label for="id_email">email</label><br>
+                            <input type="email"  name="email" id="id_email" value="{{ seller.email }}">
+                            <br>
+
+                            <label for="id_phone_number">Phonenumber</label><br>
+                            <input name="phonenumber" type="text" id="id_phone_number" value="{{ seller.phone_number }}">
+                            <br>
+
+                            <label for="id_dt_entrance">Data about seller</label><br>
+                            <input name="dt_entrance" type="text" id="id_dt_entrance" value="{{ seller.dt_entrance }}">
+                            <br>
+                        </div>
+                    </fieldset>
+                <button type="submit" class="btn btn-warning">Update</button>
+
+            </form>
+
+            <form method="POST" action="{% url 'delete_seller' seller.id_code %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
