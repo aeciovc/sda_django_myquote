@@ -7,7 +7,7 @@
             <h5 class="card-title">Products list</h5>
           </div>
           <div class="card-body ">
-            <table>
+            <table class="table">
             <tr>
                 <th>Image</th>
                 <th>PK</th>
@@ -25,7 +25,11 @@
                         </a>
                     </td>
                     <td>{{ product.pk }}</td>
-                    <td>{{ product.name }}</td>
+                    <td>
+                        <a href="{% url 'product_detail' product.pk %}">
+                            {{ product.name }}
+                        </a>
+                    </td>
                     <td>{{ product.description }}</td>
                     <td>{{ product.brand }}</td>
                     <td>{{ product.get_status_display }}</td>
@@ -34,6 +38,12 @@
             {% endfor %}
             </table>
           </div>
+            <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                    <a class="btn btn-primary pull-right" href="{% url 'product_create' %}">Add product</a>
+                </div>
+            </div>
         </div>
       </div>
 {% endblock %}
