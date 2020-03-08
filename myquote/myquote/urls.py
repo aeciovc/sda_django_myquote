@@ -25,8 +25,8 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('', TemplateView.as_view(template_name="index.html"), name='index'),
     path('accounts/', include('accounts.urls')),
+    path("sellers/", include("seller.urls")),
     path('about/', TemplateView.as_view(template_name="about.html"), name='about'),
-
 ]
 
 if settings.DEBUG:
