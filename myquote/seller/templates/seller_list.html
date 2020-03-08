@@ -1,0 +1,16 @@
+
+
+{% block content %}
+    <h1>Sellers</h1>
+    <ul>
+        {% for seller in sellers %}
+            <a href="{% url 'seller' seller.id_code %}">
+            <li>Name:{{seller.name}}</li>
+            <li>Enamil: {{seller.email}}</li>
+            <li>Phone: {{ seller.phone_number }}</li>
+            <li>Data: {{ seller.dt_entrance }}</li>
+            </a>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}

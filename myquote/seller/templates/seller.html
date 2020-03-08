@@ -1,0 +1,26 @@
+{% block context %}
+    {{ message }}
+    <form method="POST" action="{% url 'update_seller' seller.id_code %}">
+        {% csrf_token %}
+        <label for="id_name">name</label>
+        <input name="name" id="id_name" type="text" value="{{ seller.name }}">
+
+        <label for="id_email">email</label>
+        <input type="email"  name="email" id="id_email" value="{{ seller.email }}">
+
+        <label for="id_phone_number">Phonenumber</label>
+        <input name="phonenumber" type="text" id="id_phone_number" value="{{ seller.phone_number }}">
+
+        <label for="id_dt_entrance">Data about seller</label>
+        <input name="dt_entrance" type="text" id="id_dt_entrance" value="{{ seller.dt_entrance }}">
+
+        <button type="submit">Update</button>
+
+    </form>
+
+    <form method="POST" action="{% url 'delete_seller' seller.id_code %}">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+
+{% endblock %}

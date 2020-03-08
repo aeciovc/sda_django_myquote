@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 STATUSES = [
     ('P', 'Published'),
@@ -8,6 +9,8 @@ STATUSES = [
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
+    created_date = models.DateTimeField(default=timezone.now)
+    created_by = models.CharField(max_length=200, default="system")
 
     def __str__(self):
         return self.name
