@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (ListView, CreateView, UpdateView, DeleteView)
 from .models import Buyer
@@ -32,4 +31,3 @@ class BuyersDeleteView(DeleteView):
     model = Buyer
     template_name = "buyer_confirm_delete.html"
     success_url = reverse_lazy('buyers-list')
-
