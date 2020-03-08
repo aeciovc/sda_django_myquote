@@ -37,9 +37,9 @@
 
                 {%for buyer in object_list%}
                     <tr class="lead">
-                          <td>{{buyer.pk}}</td>
-                          <td>{{buyer.name}}</td>
-                          <td>{{buyer.email}}</td>
+                          <td>{{buyer.user.pk}}</td>
+                          <td>{{buyer.user.first_name}} {{buyer.user.last_name}}</td>
+                          <td>{{buyer.user.email}}</td>
                           <td>{{buyer.phone_number}}</td>
                           <td>{{buyer.id_code}}</td>
                           <td>{{buyer.dt_entrance}}</td>
