@@ -1,9 +1,7 @@
 /env
 
-
-
 # configuration files:
-.cnf
+*.cnf
 
 # Django #
 *.log
