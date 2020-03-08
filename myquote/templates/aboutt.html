@@ -3,6 +3,7 @@
 {% block title %}About{% endblock %}
 
 {% block content %}
+
       <div class="content">
         <div class="row">
           <div class="col-md-6">
@@ -20,55 +21,23 @@
                 <p>“Talent wins games, but teamwork and intelligence wins championships.” -Michael Jordan</p>
               </div>
             </div>
-          </div>
+          </div>  
+     {% for teammember in object_list %}
         <div class="row" style="text-align: center;" >
           <div class="col-md-3">
-            <div class="card">
+            <div class="card" >
               <div class="card-header">
-                <h3>John smith</h3>
+                <h3>{{teammember.name}}</h3>
                 <img src="https://i.ya-webdesign.com/images/person-svg-1.png" width="100%%">
                 <hr>
-                <p>Marketing</p>
-                <p>marketing@project.com</p>
+                <p>{{teammember.role}}</p>
+                <p>{{teammember.email}}</p>
               </div>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-header">
-                <h3>Klara Whails</h3>
-                <img src="https://i.ya-webdesign.com/images/person-svg-1.png" width="100%%">
-                <hr>
-                <p>Sales</p>
-                <p>sales@project.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-header">
-                <h3>Mark Abramov</h3>
-                <img src="https://i.ya-webdesign.com/images/person-svg-1.png" width="100%%">
-                <hr>
-                <p>Front-end</p>
-                <p>front-end@project.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-header">
-                <h3>Ivan Putinin</h3>
-                <img src="https://i.ya-webdesign.com/images/person-svg-1.png" width="100%%">
-                <hr>
-                <p>Back-end</p>
-                <p>back-end@project.com</p>
-              </div>
-            </div>
-          </div>
-          
         </div>
       </div>
+     {% endfor %}
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
           <div class="row">

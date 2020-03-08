@@ -1,0 +1,38 @@
+[
+  {
+    "model": "configuration.teammember",
+    "pk": 1,
+    "fields": {
+      "name": "John smith",
+      "role": "Marketing",
+      "email": "marketing@project.com"
+    }
+  },
+  {
+    "model": "configuration.teammember",
+    "pk": 2,
+    "fields": {
+      "name": "Klara Whails",
+      "role": "Sale",
+      "email": "sales@project.com"
+    }
+  },
+  {
+    "model": "configuration.teammember",
+    "pk": 3,
+    "fields": {
+      "name": "Mark Abramov",
+      "role": "Front-end",
+      "email": "front-end@project.com",
+    }
+  },
+  {
+    "model": "configuration.teammember",
+    "pk": 4,
+    "fields": {
+      "name": "Ivan Putinin",
+      "role": "Back-end",
+      "email": "back-end@project.com",
+    }
+  }
+]
