@@ -63,12 +63,21 @@
             <p>Notifications</p>
         </a>
         </li>
+        {% if user.is_authenticated %}
         <li>
-        <a href="./user.html">
+            <a href="{%url 'user-profile' user.pk %}">
             <i class="nc-icon nc-single-02"></i>
             <p>User Profile</p>
-        </a>
+            </a>
         </li>
+        {% else %}
+        <li>
+            <a href="{%url 'user-login'%}">
+            <i class="nc-icon nc-single-02"></i>
+            <p>User Profile</p>
+            </a>
+        </li>
+        {% endif %}
         <li>
         <a href="./typography.html">
             <i class="nc-icon nc-caps-small"></i>
