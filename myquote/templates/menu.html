@@ -1,58 +1,37 @@
 {% load static %}
 <div class="sidebar" data-color="white" data-active-color="danger">
     <div class="logo">
-    <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+    <a class="simple-text logo-mini">
         <div class="logo-image-small">
         <img src="{% static 'img/logo-small.png'%}">
         </div>
     </a>
-    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+    <a  class="simple-text logo-normal">
         My Quote
     </a>
     </div>
     <div class="sidebar-wrapper">
     <ul class="nav">
-
-        {% if user.is_authenticated %}
-        <li>
-            <i class="nc-icon nc-single-02"></i>
-            <p>Hello, {{user.username}}</p>
-        </li>
-        <li>
-            <a href="{%url 'user-logout'%}">
-            <i class="nc-icon nc-single-02"></i>
-            <p>Logout</p>
-            </a>
-        </li>
-        {% else %}
-        <li>
-            <a href="{%url 'user-login'%}">
-            <i class="nc-icon nc-single-02"></i>
-            <p>Login</p>
-            </a>
-        </li>
-        {% endif %}
-
         <li class="active ">
-        <a href="./dashboard.html">
+        <a href="{% url 'buyers-list' %}">
             <i class="nc-icon nc-bank"></i>
             <p>Dashboard</p>
         </a>
         </li>
         <li>
-        <a href="./icons.html">
+        <a href="{% url 'buyers-list' %}">
             <i class="nc-icon nc-diamond"></i>
             <p>Buyers</p>
         </a>
         </li>
         <li>
-        <a href="./products/category_list/">
+        <a href="{% url 'category_list' %}">
             <i class="nc-icon nc-tile-56"></i>
             <p>Categories</p>
         </a>
         </li>
         <li>
-        <a href="./map.html">
+        <a href="{% url 'products_list' %}">
             <i class="nc-icon nc-pin-3"></i>
             <p>Products</p>
         </a>
