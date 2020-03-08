@@ -1,5 +1,8 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+
+from buyers.models import Buyer
 from .forms import SignUpForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
@@ -35,7 +38,7 @@ def user_logout(request):
     return redirect('index')
 
 
-def user_signup(request):
+def user_signup_for_buyers(request):
     if request.user.is_authenticated:
         return redirect('index')
 
@@ -43,8 +46,17 @@ def user_signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
+
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
+
+            our_user = User.objects.get(username=username)
+            phone_number = form.cleaned_data.get('phone')
+            id_code = form.cleaned_data.get('id_code')
+            dt_entrance = form.cleaned_data.get('dt_entrance')
+            buyer_profile = Buyer(user=our_user, phone_number=phone_number, id_code=id_code, dt_entrance=dt_entrance)
+            buyer_profile.save()
+
             user = authenticate(username=username, password=raw_password)
             login(request, user)
             return redirect('index')

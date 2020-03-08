@@ -11,8 +11,10 @@ class BuyersListView(ListView):
 
 
 class BuyersCreateView(CreateView):
+
     model = Buyer
     fields = "__all__"
+
     template_name = 'create_buyers.html'
 
     def get_success_url(self):
