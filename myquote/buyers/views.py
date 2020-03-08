@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
-from django.views.generic import (ListView, CreateView,
-                                  UpdateView, DeleteView)
+from django.views.generic import (ListView, CreateView, UpdateView, DeleteView)
 from .models import Buyer
+
 
 
 class BuyersListView(ListView):

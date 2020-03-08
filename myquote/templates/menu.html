@@ -1,12 +1,12 @@
 {% load static %}
 <div class="sidebar" data-color="white" data-active-color="danger">
     <div class="logo">
-    <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+    <a class="simple-text logo-mini">
         <div class="logo-image-small">
         <img src="{% static 'img/logo-small.png'%}">
         </div>
     </a>
-    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+    <a  class="simple-text logo-normal">
         My Quote
     </a>
     </div>
@@ -34,25 +34,25 @@
         {% endif %}
 
         <li class="active ">
-        <a href="./dashboard.html">
+        <a href="{% url 'buyers-list' %}">
             <i class="nc-icon nc-bank"></i>
             <p>Dashboard</p>
         </a>
         </li>
         <li>
-        <a href="./icons.html">
+        <a href="{% url 'buyers-list' %}">
             <i class="nc-icon nc-diamond"></i>
             <p>Buyers</p>
         </a>
         </li>
         <li>
-        <a href="./tables.html">
+        <a href="{% url 'category_list' %}">
             <i class="nc-icon nc-tile-56"></i>
             <p>Categories</p>
         </a>
         </li>
         <li>
-        <a href="./map.html">
+        <a href="{% url 'products_list' %}">
             <i class="nc-icon nc-pin-3"></i>
             <p>Products</p>
         </a>
@@ -73,6 +73,12 @@
         <a href="./typography.html">
             <i class="nc-icon nc-caps-small"></i>
             <p>Typography</p>
+        </a>
+        </li>
+        <li>
+        <a href="./about">
+            <i class="nc-icon nc-world-2"></i>
+            <p>About</p>
         </a>
         </li>
         <li class="active-pro">
