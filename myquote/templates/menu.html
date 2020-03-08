@@ -12,6 +12,27 @@
     </div>
     <div class="sidebar-wrapper">
     <ul class="nav">
+
+        {% if user.is_authenticated %}
+        <li>
+            <i class="nc-icon nc-single-02"></i>
+            <p>Hello, {{user.username}}</p>
+        </li>
+        <li>
+            <a href="{%url 'user-logout'%}">
+            <i class="nc-icon nc-single-02"></i>
+            <p>Logout</p>
+            </a>
+        </li>
+        {% else %}
+        <li>
+            <a href="{%url 'user-login'%}">
+            <i class="nc-icon nc-single-02"></i>
+            <p>Login</p>
+            </a>
+        </li>
+        {% endif %}
+
         <li class="active ">
         <a href="./dashboard.html">
             <i class="nc-icon nc-bank"></i>
@@ -25,7 +46,7 @@
         </a>
         </li>
         <li>
-        <a href="./tables.html">
+        <a href="./products/category_list/">
             <i class="nc-icon nc-tile-56"></i>
             <p>Categories</p>
         </a>
@@ -52,6 +73,12 @@
         <a href="./typography.html">
             <i class="nc-icon nc-caps-small"></i>
             <p>Typography</p>
+        </a>
+        </li>
+        <li>
+        <a href="./about">
+            <i class="nc-icon nc-world-2"></i>
+            <p>About</p>
         </a>
         </li>
         <li class="active-pro">

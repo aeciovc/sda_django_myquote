@@ -1,0 +1,13 @@
+{% block content %}
+    <p>
+        <a href="{{ product.image.url }}">
+            <img src="{{ product.image.url }}" height="100" width="100">
+        </a>
+    </p>
+    <p>{{ product.pk }}</p>
+    <p>{{ product.name }}</p>
+    <p>{{ product.description }}</p>
+    <p>{{ product.brand }}</p>
+    <p>{{ product.get_status_display }}</p>
+    <p>{{ product.category.name }}</p>
+{% endblock %}

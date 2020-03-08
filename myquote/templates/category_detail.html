@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>PK: {{ category.pk }}</p>
+    <p>Name: {{ category.name }}</p>
+    <p>Created Date: {{ category.created_date }}</p>
+    <p>Created by: {{ category.created_by }}</p>
+
+    <a href="{% url 'category_update' category.pk %}">Update category</a>
+    <br><a href="{% url 'category_delete' category.pk %}">Delete category</a>
+
+{% endblock %}
