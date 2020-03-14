@@ -3,7 +3,11 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.views.generic import UpdateView
+from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils.http import urlencode
 
 
 def user_login(request):
@@ -51,3 +55,21 @@ def user_signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+
+class UserProfile(LoginRequiredMixin, UpdateView):
+    model = User
+    template_name = 'user.html'
+    context_object_name = 'user'
+    fields = ['first_name', 'last_name', 'email']
+
+    def get_success_url(self):
+        userid = self.kwargs['pk']
+        url = reverse_lazy('user-profile', kwargs={'pk': userid})
+        return u'%s?%s' % (url, "success=True")
+
+
+
+
+
+
